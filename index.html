@@ -1,87 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0758a8">
-<meta name="description" content="PediaMetabolic Pro - Pediatric and Metabolic Medicine Clinical Toolkit">
-<title>PediaMetabolic Pro</title>
-<style>
-:root{font-family:Arial,sans-serif;color:#16324f;background:#f3f7fc}
-*{box-sizing:border-box}
-body{margin:0}
-header{background:linear-gradient(120deg,#0758a8,#0e88c7);color:white;padding:24px 6%}
-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.brand{font-size:23px;font-weight:800}
-button{cursor:pointer;border:0;border-radius:10px;padding:11px 16px;font-weight:600}
-nav button{background:#ffffff22;color:white;border:1px solid #ffffff55}
-.hero{padding:65px 0 55px;max-width:800px}
-.hero h1{font-size:clamp(30px,5vw,48px);margin:0 0 14px}
-.hero p{line-height:1.7;color:#e3f2ff}
-.search{width:100%;max-width:620px;padding:17px;border-radius:12px;border:0;font-size:16px}
-main{max-width:1200px;margin:auto;padding:35px 22px}
-h2{margin:10px 0 22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:white;padding:26px;border:1px solid #dbe7f4;border-radius:18px;box-shadow:0 5px 20px #124b8010}
-.card .emoji{font-size:31px}
-.card h3{margin-bottom:8px}
-.card p{color:#65778b;line-height:1.5;min-height:46px}
-.card button{background:#e9f3ff;color:#0758a8}
-.notice{margin:32px 0;background:#e9f3ff;padding:20px;border-radius:14px;line-height:1.6}
-footer{text-align:center;color:#65778b;padding:30px}
-.dark{background:#101b2c;color:#e8f1ff}
-.dark .card{background:#1c2d43;border-color:#324b65}
-.dark .card p{color:#c2d1e0}
-.dark .notice{background:#1c2d43}
-@media(max-width:600px){header{padding:20px}main{padding:25px 16px}.hero{padding:40px 0}}
-</style>
-</head>
-<body>
-<header>
-<nav>
-<div class="brand">✚ PediaMetabolic Pro</div>
-<div><button onclick="toggleLang()" id="lang">العربية</button> <button onclick="toggleTheme()" id="theme">🌙</button></div>
-</nav>
-<section class="hero">
-<h1 data-en="Pediatric & Metabolic Medicine" data-ar="طب الأطفال والأمراض الاستقلابية">Pediatric & Metabolic Medicine</h1>
-<p data-en="Evidence-based clinical tools, calculators, guidelines and medical references in one place." data-ar="الحاسبات الطبية والإرشادات والمراجع العلمية في مكان واحد.">Evidence-based clinical tools, calculators, guidelines and medical references in one place.</p>
-<input id="search" class="search" oninput="filterCards()" placeholder="Search clinical tools..." aria-label="Search clinical tools">
-</section>
-</header>
-<main>
-<h2 data-en="Clinical Toolkit" data-ar="الأدوات الطبية">Clinical Toolkit</h2>
-<div class="grid" id="grid"></div>
-<div class="notice" id="notice">Clinical content and calculators are under development. This demonstration must not be used for clinical decision-making.</div>
-</main>
-<footer>© 2026 PediaMetabolic Pro · International Guidelines & Medical Textbooks</footer>
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0758a8"><title>PediaMetabolic Pro | Clinical Calculators</title><style>
+:root{font-family:system-ui,Arial,sans-serif;color:#153451;background:#f3f7fc}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(120deg,#064e98,#108ac4);color:white;padding:24px max(20px,calc((100vw - 1100px)/2))}nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:800;font-size:23px}button{cursor:pointer;border:0;border-radius:10px;padding:11px 16px;font-weight:650}nav button{color:white;background:#ffffff20;border:1px solid #ffffff55}.hero{padding:42px 0 30px}.hero h1{font-size:clamp(27px,4vw,44px);margin:0 0 10px}.hero p{color:#e2f3ff;line-height:1.6}.search{width:100%;max-width:600px;padding:15px;border:0;border-radius:12px;font-size:16px}main{max-width:1140px;margin:auto;padding:30px 20px}h2{margin:12px 0 22px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:16px}.card,.panel{background:white;padding:22px;border:1px solid #dbe6f1;border-radius:16px;box-shadow:0 5px 18px #1450800a}.card .emoji{font-size:29px}.card h3{margin:10px 0}.card p{color:#66798b;line-height:1.5;min-height:44px}.card button,.primary{background:#0969b3;color:white}.card button:disabled{background:#e8eff6;color:#60758b;cursor:default}.panel{margin-top:25px}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}.field{display:flex;flex-direction:column;gap:7px;font-weight:600}.field input,.field select{padding:12px;border:1px solid #b9cfe1;border-radius:9px;font-size:16px;background:white;color:#163451}.result{background:#e8f4ff;border-radius:12px;padding:18px;margin-top:16px;line-height:1.7}.note{background:#fff5df;border-inline-start:4px solid #d48a15;padding:15px;border-radius:8px;line-height:1.6;margin-top:15px}.refs{font-size:13px;color:#60758b;line-height:1.7;margin-top:15px}.refs a{color:#0969b3}footer{text-align:center;color:#66798b;padding:25px}.hidden,[hidden]{display:none!important}.dark{background:#101c2c;color:#eaf2fb}.dark .card,.dark .panel{background:#1b2c42;border-color:#35506a}.dark .card p,.dark .refs{color:#c1d0df}.dark .result{background:#213e5c}.dark .note{background:#483a22}.dark .field input,.dark .field select{background:#12253a;color:white;border-color:#49627b}@media(max-width:600px){header{padding:20px}.hero{padding:35px 0 25px}} </style></head><body>
+<header><nav><div class="brand">✚ PediaMetabolic Pro</div><div><button id="langBtn" onclick="toggleLang()">العربية</button> <button id="themeBtn" onclick="toggleTheme()">🌙</button></div></nav><section class="hero"><h1 data-en="Pediatric & Metabolic Medicine" data-ar="طب الأطفال والأمراض الاستقلابية">Pediatric & Metabolic Medicine</h1><p data-en="Evidence-based clinical calculators and references. Phase 2 preview." data-ar="حاسبات طبية ومراجع علمية. النسخة التجريبية للمرحلة الثانية.">Evidence-based clinical calculators and references. Phase 2 preview.</p><input id="search" class="search" oninput="filterCards()" placeholder="Search clinical tools..." aria-label="Search clinical tools"></section></header>
+<main><h2 data-en="Clinical Toolkit" data-ar="الأدوات الطبية">Clinical Toolkit</h2><div id="grid" class="grid"></div><section id="calculator" class="panel hidden" aria-live="polite"><h2 id="calcTitle"></h2><div id="fields" class="formgrid"></div><p><button class="primary" id="calculateBtn" onclick="calculate()">Calculate</button></p><div id="output" class="result hidden"></div><div id="caution" class="note"></div><div id="references" class="refs"></div></section><div class="note" id="globalNotice">Educational preview. Independently verify results; not approved for clinical decision-making.</div></main><footer>© 2026 PediaMetabolic Pro · International guidelines & medical textbooks</footer>
 <script>
-const items=[
-["🩸","DKA Management","علاج الحماض الكيتوني السكري","Dynamic DKA monitoring and treatment tools","متابعة وعلاج الحماض الكيتوني"],
-["💧","IV Fluids","المحاليل الوريدية","Maintenance, deficit and fluid calculations","حساب المحاليل الوريدية"],
-["🧮","Medical Calculators","الحاسبات الطبية","GIR, BSA, sodium and more","حساب GIR ومساحة الجسم والصوديوم"],
-["🧬","Metabolic Medicine","الأمراض الاستقلابية","Inherited metabolic diseases and emergencies","الأمراض الاستقلابية الوراثية والطوارئ"],
-["🚨","Pediatric Emergency","طوارئ الأطفال","Emergency assessment and algorithms","تقييم وخوارزميات الطوارئ"],
-["💊","Drug Dosing","جرعات الأدوية","Pediatric medication reference tools","مراجع جرعات أدوية الأطفال"],
-["👶","Neonatology","حديثو الولادة","Neonatal clinical tools and references","أدوات ومراجع حديثي الولادة"],
-["📚","Medical Library","المكتبة الطبية","International guidelines and textbooks","الإرشادات الدولية والكتب الطبية"],
-["🤖","Medical AI Assistant","المساعد الطبي الذكي","Future evidence-based research assistant","مساعد بحث طبي مستقبلي"]
-];
-let language="en";
-function render(){
-document.documentElement.lang=language;
-document.documentElement.dir=language==="ar"?"rtl":"ltr";
-document.querySelectorAll("[data-en]").forEach(e=>e.textContent=e.dataset[language]);
-document.getElementById("lang").textContent=language==="en"?"العربية":"English";
-document.getElementById("search").placeholder=language==="en"?"Search clinical tools...":"ابحث في الأدوات الطبية...";
-document.getElementById("notice").textContent=language==="en"?"Clinical content and calculators are under development. This demonstration must not be used for clinical decision-making.":"الحاسبات والمحتوى الطبي قيد التطوير. هذه نسخة تجريبية ولا يجوز استخدامها لاتخاذ قرارات علاجية.";
-document.getElementById("grid").innerHTML=items.map((x,i)=>'<article class="card" data-search="'+x.join(" ").toLowerCase()+'"><div class="emoji">'+x[0]+'</div><h3>'+(language==="en"?x[1]:x[2])+'</h3><p>'+(language==="en"?x[3]:x[4])+'</p><button onclick="comingSoon()">'+(language==="en"?"Explore":"استكشف")+'</button></article>').join("");
-filterCards();
-}
-function toggleLang(){language=language==="en"?"ar":"en";render()}
-function toggleTheme(){document.body.classList.toggle("dark");document.getElementById("theme").textContent=document.body.classList.contains("dark")?"☀️":"🌙"}
-function filterCards(){const q=document.getElementById("search").value.toLowerCase();document.querySelectorAll(".card").forEach(e=>e.hidden=!e.dataset.search.includes(q))}
-function comingSoon(){alert(language==="en"?"This module is coming in a future release.":"سيتم تفعيل هذا القسم في إصدار لاحق.")}
-render();
-</script>
-</body>
-</html>
+const entries=[['💧','Maintenance IV Fluids','المحاليل الوريدية','Holliday–Segar maintenance volume','حساب احتياجات الصيانة','fluids'],['🧮','Glucose Infusion Rate (GIR)','معدل ضخ الجلوكوز','Dextrose infusion in mg/kg/min','حساب معدل ضخ الجلوكوز','gir'],['📐','Body Surface Area (BSA)','مساحة سطح الجسم','Mosteller equation','معادلة موستيلر','bsa'],['🧂','Corrected Sodium','الصوديوم المصحح','Hyperglycemia correction estimate','تقدير تصحيح الصوديوم مع ارتفاع السكر','sodium'],['🩸','DKA Management','علاج الحماض الكيتوني','Under clinical validation','قيد المراجعة السريرية',null],['🧬','Metabolic Medicine','الأمراض الاستقلابية','Protocols under development','بروتوكولات قيد التطوير',null],['🚨','Pediatric Emergency','طوارئ الأطفال','Protocols under development','بروتوكولات قيد التطوير',null],['💊','Drug Dosing','جرعات الأدوية','Under clinical validation','قيد المراجعة السريرية',null],['👶','Neonatology','حديثو الولادة','Clinical tools under development','أدوات قيد التطوير',null],['📚','Medical Library','المكتبة الطبية','Guidelines and licensed textbooks','الإرشادات والكتب المرخصة',null],['🤖','Medical AI Assistant','المساعد الطبي الذكي','Future evidence-based assistant','مساعد طبي مستقبلي',null]];
+const tr=(en,ar)=>lang==='en'?en:ar;let lang='en',current=null;
+function render(){document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.querySelectorAll('[data-en]').forEach(e=>e.textContent=e.dataset[lang]);document.getElementById('langBtn').textContent=lang==='en'?'العربية':'English';document.getElementById('search').placeholder=tr('Search clinical tools...','ابحث في الأدوات الطبية...');document.getElementById('grid').innerHTML=entries.map(x=>`<article class="card" data-search="${[...x].join(' ').toLowerCase().replace(/"/g,'')}"><div class="emoji">${x[0]}</div><h3>${tr(x[1],x[2])}</h3><p>${tr(x[3],x[4])}</p><button ${x[5]?`onclick="openCalc('${x[5]}')"`:'disabled'}>${x[5]?tr('Open calculator','فتح الحاسبة'):tr('Coming soon','قريبًا')}</button></article>`).join('');document.getElementById('globalNotice').textContent=tr('Educational preview only. Independently verify calculations and local applicability; not clinically validated or approved for patient-care decisions.','نسخة تعليمية تجريبية فقط. يجب التحقق المستقل من الحسابات وملاءمتها السريرية؛ لم تُعتمد للاستخدام في اتخاذ القرارات العلاجية.');filterCards();if(current)openCalc(current,false)}
+function toggleLang(){lang=lang==='en'?'ar':'en';render()}function toggleTheme(){document.body.classList.toggle('dark');document.getElementById('themeBtn').textContent=document.body.classList.contains('dark')?'☀️':'🌙'}function filterCards(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.card').forEach(e=>e.hidden=!e.dataset.search.includes(q))}
+const field=(id,en,ar,unit)=>`<label class="field">${tr(en,ar)}${unit?' ('+unit+')':''}<input type="number" id="${id}" min="0" step="any" inputmode="decimal" placeholder="${tr('Enter value','أدخل القيمة')}"></label>`;
+const sources={fluids:'<a target="_blank" rel="noopener" href="https://www.nice.org.uk/guidance/ng29">NICE NG29: Intravenous fluid therapy in children and young people</a> · <a target="_blank" rel="noopener" href="https://doi.org/10.1542/peds.2018-3083">AAP Clinical Practice Guideline (2018)</a>',gir:'<a target="_blank" rel="noopener" href="https://www.ncbi.nlm.nih.gov/books/NBK541119/">NCBI Bookshelf: Neonatal Hypoglycemia</a> · standard concentration/flow unit conversion',bsa:'<a target="_blank" rel="noopener" href="https://doi.org/10.1056/NEJM198710223171717">Mosteller RD. Simplified calculation of body-surface area (1987)</a>',sodium:'<a target="_blank" rel="noopener" href="https://doi.org/10.1016/0002-9343(73)90160-0">Katz MA (1973)</a> · <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0002-9343(99)80035-8">Hillier TA et al. (1999)</a>'};
+function openCalc(which,scroll=true){current=which;const names={fluids:['Maintenance IV Fluids','المحاليل الوريدية'],gir:['Glucose Infusion Rate','معدل ضخ الجلوكوز'],bsa:['Body Surface Area','مساحة سطح الجسم'],sodium:['Corrected Sodium','الصوديوم المصحح']};document.getElementById('calculator').classList.remove('hidden');document.getElementById('calcTitle').textContent=tr(...names[which]);let f='';if(which==='fluids')f=field('weight','Weight','الوزن','kg');if(which==='gir')f=field('weight','Weight','الوزن','kg')+field('dextrose','Dextrose concentration','تركيز الجلوكوز','% w/v')+field('rate','Infusion rate','معدل المحلول','mL/h');if(which==='bsa')f=field('weight','Weight','الوزن','kg')+field('height','Height','الطول','cm');if(which==='sodium')f=field('na','Measured sodium','الصوديوم المقاس','mmol/L')+field('glucose','Measured glucose','سكر الدم','mmol/L');document.getElementById('fields').innerHTML=f;document.getElementById('calculateBtn').textContent=tr('Calculate','احسب');document.getElementById('output').classList.add('hidden');const warnings={fluids:['Maintenance volume only; excludes deficit, ongoing losses and boluses. NICE/AAP fluid composition guidance must be assessed separately. Special populations (e.g., DKA, cardiac/renal disease, neonates) require dedicated protocols.','الحساب للصيانة فقط ولا يشمل العجز أو الفقد المستمر أو البلعات. اختيار تركيب المحلول منفصل ويتطلب تقييمًا سريريًا، وبعض الحالات تحتاج بروتوكولات خاصة.'],gir:['Arithmetic GIR only; does not establish an appropriate target or prescribe glucose therapy.','حساب رياضي فقط ولا يحدد الهدف العلاجي أو يصف علاج الجلوكوز.'],bsa:['An estimate only. Do not use for medication dosing without checking the specific drug guidance.','تقدير فقط؛ لا تستخدمه لجرعات الأدوية دون مراجعة إرشادات الدواء.'],sodium:['Estimated sodium correction for hyperglycemia, not a treatment target. The correction factor varies with clinical context and severe hyperglycemia.','تقدير تصحيحي للصوديوم وليس هدفًا علاجيًا؛ تختلف المعادلة حسب السياق السريري وشدة ارتفاع السكر.']};document.getElementById('caution').textContent=tr(...warnings[which]);document.getElementById('references').innerHTML=tr('References: ','المراجع: ')+sources[which];if(scroll)document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'})}
+function val(id){return Number(document.getElementById(id).value)}function valid(id,min,max){let e=document.getElementById(id);return e&&e.value.trim()!==''&&Number.isFinite(Number(e.value))&&Number(e.value)>=min&&Number(e.value)<=max}function fmt(n,d=2){return Number(n.toFixed(d)).toLocaleString(lang==='ar'?'ar-EG':'en-US',{maximumFractionDigits:d})}
+function calculate(){let out='',ok=true;if(current==='fluids'){ok=valid('weight',0.1,300);if(ok){let w=val('weight'),daily=w<=10?100*w:w<=20?1000+50*(w-10):1500+20*(w-20);out=`<strong>${tr('Daily maintenance','الصيانة اليومية')}: ${fmt(daily,1)} mL/day</strong><p>${tr('Average hourly rate','متوسط المعدل بالساعة')}: ${fmt(daily/24,2)} mL/h</p><small>${tr('Holliday–Segar: first 10 kg ×100, next 10 kg ×50, remainder ×20 mL/day. This is not the 4–2–1 hourly shortcut.','هوليداي–سيجار: أول 10 كجم ×100، ثم 10 كجم ×50، وما زاد ×20 مل/يوم. هذا ليس تقريب 4–2–1 بالساعة.')}</small>`}}else if(current==='gir'){ok=valid('weight',0.1,300)&&valid('dextrose',0.01,70)&&valid('rate',0,3000);if(ok){let gir=val('dextrose')*val('rate')*10/(val('weight')*60);out=`<strong>GIR = ${fmt(gir,3)} mg/kg/min</strong><p>${tr('Formula','المعادلة')}: (% × mL/h × 10) ÷ (kg × 60)</p>`}}else if(current==='bsa'){ok=valid('weight',0.1,300)&&valid('height',10,250);if(ok){let bsa=Math.sqrt(val('weight')*val('height')/3600);out=`<strong>BSA = ${fmt(bsa,4)} m²</strong><p>${tr('Mosteller','موستيلر')}: √(height cm × weight kg / 3600)</p>`}}else if(current==='sodium'){ok=valid('na',80,200)&&valid('glucose',0,100);if(ok){let na=val('na'),g=val('glucose'),delta=(g-5.6)/5.6;out=`<strong>${tr('Katz factor 1.6','معامل كاتز 1.6')}: ${fmt(na+1.6*delta,2)} mmol/L</strong><p>${tr('Hillier factor 2.4','معامل هيلير 2.4')}: ${fmt(na+2.4*delta,2)} mmol/L</p><small>${tr('Formula: measured Na + factor × [(glucose mmol/L − 5.6) / 5.6]. Intended for hyperglycemia only; glucose below 5.6 mmol/L is not applicable.','المعادلة: الصوديوم المقاس + المعامل × [(الجلوكوز − 5.6) ÷ 5.6]. تستخدم لارتفاع السكر فقط.')}</small>`;if(g<5.6)ok=false}}document.getElementById('output').innerHTML=ok?out:tr('Please enter valid values in the indicated units. For corrected sodium, glucose must be at least 5.6 mmol/L.','يرجى إدخال قيم صحيحة بالوحدات المحددة. لتصحيح الصوديوم يجب ألا يقل السكر عن 5.6 مليمول/لتر.');document.getElementById('output').classList.remove('hidden')}
+render();</script></body></html>
