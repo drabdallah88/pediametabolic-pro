@@ -1,1 +1,17 @@
-{"name":"PediaMetabolic Pro","short_name":"PediaMetabolic","start_url":"./index.html","scope":"./","display":"standalone","background_color":"#f3f7fc","theme_color":"#0758a8","icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "PediaMetabolic Pro — Clinical Reference V19",
+  "short_name": "PediaMetabolic",
+  "start_url": "./?release=v19-20261028",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f7fc",
+  "theme_color": "#0758a8",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
